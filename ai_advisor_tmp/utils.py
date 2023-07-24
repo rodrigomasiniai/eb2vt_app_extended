@@ -27,7 +27,7 @@ import openai
 try:
     from api import openai as api_key
 except ImportError:
-    api_key = st.secrets["OPENAI_API_KEY"]
+    api_key = os.environ["OPENAI_API_KEY"]
     
 openai.api_key = api_key
 
