@@ -1,0 +1,1 @@
+{"sql_url": "sqlite:///openai_faiss_document_store.db", "embedding_dim": 1024, "faiss_index_factory_str": "Flat", "similarity": "cosine"}

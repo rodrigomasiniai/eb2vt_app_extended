@@ -1,0 +1,56 @@
+# To allow your IDE to autocomplete and validate your YAML pipelines, name them as <name of your choice>.haystack-pipeline.yml
+
+version: 1.7.0
+
+components:    # define all the building-blocks for Pipeline
+  - name: DocumentStore
+    type: FAISSDocumentStore  # consider using MilvusDocumentStore or WeaviateDocumentStore for scaling to large number of documents
+    params:
+      faiss_index_path: faiss.index
+      # faiss_config_path: rest_api/faiss.json
+      # sql_url: sqlite:///rest_api/faiss_document_store.db
+  - name: Retriever
+    type: DensePassageRetriever
+    params:
+      document_store: DocumentStore    # params can reference other components defined in the YAML
+      passage_embedding_model: vblagoje/dpr-ctx_encoder-single-lfqa-wiki
+      query_embedding_model: vblagoje/dpr-question_encoder-single-lfqa-wiki
+  #- name: Generator       # custom-name for the component; helpful for visualization & debugging
+  #  type: Seq2SeqGenerator    # Haystack Class name for the component
+  #  params:
+  #    model_name_or_path: vblagoje/bart_lfqa
+  #    max_length: 300
+  #    min_length: 10
+  # - name: TextFileConverter
+  #   type: TextConverter
+  # - name: PDFFileConverter
+  #   type: PDFToTextConverter
+  # - name: Preprocessor
+  #   type: PreProcessor
+  #   params:
+  #     split_by: word
+  #     split_length: 300
+  # - name: FileTypeClassifier
+  #   type: FileTypeClassifier
+
+pipelines:
+  - name: query    # generative-qa Pipeline
+    nodes:
+      - name: Retriever
+        inputs: [Query]
+      - name: Generator
+        inputs: [Retriever]
+  # - name: indexing
+  #   nodes:
+  #     - name: FileTypeClassifier
+  #       inputs: [File]
+  #     - name: TextFileConverter
+  #       inputs: [FileTypeClassifier.output_1]
+  #     - name: PDFFileConverter
+  #       inputs: [FileTypeClassifier.output_2]
+  #     - name: Preprocessor
+  #       inputs: [PDFFileConverter, TextFileConverter]
+  #     - name: Retriever
+  #       inputs: [Preprocessor]
+  #     - name: DocumentStore
+  #       inputs: [Retriever]
