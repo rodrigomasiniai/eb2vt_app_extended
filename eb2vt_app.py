@@ -421,7 +421,7 @@ if (
         import streamlit as st
         from markdown import markdown
 
-        from ai_advisor.utils import get_backlink, get_pipelines, query, send_feedback, upload_doc
+        from ai_advisor_tmp.utils import get_backlink, get_pipelines, query, send_feedback, upload_doc
 
         # Adjust to a question that you would like users to see in the search bar when they load the UI:
         DEFAULT_QUESTION_AT_STARTUP = os.getenv(
