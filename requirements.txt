@@ -6,7 +6,7 @@ streamlit>=1.2.0, <2
 streamlit_tree_select==0.0.5
 sqlalchemy>=1.4.2,<2
 sqlalchemy_utils
-transformers[torch,sentencepiece]==4.31.0
+transformers[torch,sentencepiece]
 farm-haystack[only-faiss]
 st-annotated-text>=2.0.0, <3
 markdown>=3.3.4, <4 
