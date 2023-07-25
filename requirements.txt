@@ -2,10 +2,9 @@ numpy
 pandas
 Pillow==9.5.0
 Requests
-streamlit
+streamlit>=1.2.0, <2 
 streamlit_tree_select==0.0.5
 farm-haystack[all]
-streamlit>=1.2.0, <2 
 st-annotated-text>=2.0.0, <3
 markdown>=3.3.4, <4 
 faiss-cpu==1.7.2
