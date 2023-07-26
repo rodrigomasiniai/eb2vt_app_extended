@@ -1,16 +1,16 @@
 numpy
 pandas
-Pillow==8.3.2
+Pillow
 Requests
-streamlit>=1.2.0, <2 
-streamlit_tree_select==0.0.5
-sqlalchemy>=1.4.2,<2
-sqlalchemy_utils
-transformers==4.7.0
-sentencepiece==0.1.95
+streamlit
+streamlit_tree_select
+sqlalchemy
+#sqlalchemy_utils
+transformers
+sentencepiece
 farm-haystack[only-faiss]
-st-annotated-text>=2.0.0, <3
-markdown>=3.3.4, <4 
+st-annotated-text
+markdown
 #faiss-cpu==1.7.2
-openai==0.27.2
-altair==4.1.0
+openai
+altair
