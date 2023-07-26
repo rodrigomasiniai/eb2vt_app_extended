@@ -9,6 +9,7 @@ sqlalchemy
 transformers
 sentencepiece
 farm-haystack[only-faiss]
+torch
 st-annotated-text
 markdown
 #faiss-cpu==1.7.2
