@@ -11,6 +11,7 @@ transformers
 sentencepiece
 farm-haystack[only-faiss]
 torch==1.8.1+cpu
+sentence-transformers
 st-annotated-text
 markdown
 #faiss-cpu==1.7.2
