@@ -1,3 +1,4 @@
+-f https://download.pytorch.org/whl/torch_stable.html
 numpy
 pandas
 Pillow
@@ -9,7 +10,7 @@ sqlalchemy
 transformers
 sentencepiece
 farm-haystack[only-faiss]
-torch
+torch==1.8.1+cpu
 st-annotated-text
 markdown
 #faiss-cpu==1.7.2
